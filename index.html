@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThoughtNest - Journal</title>
+
+</head>
+
+<body>
+
+    <!-- 
+      Main Container 
+      This holds both the left column (entries) and the right column (form).
+    -->
+    <div class="app-container">
+
+        <!-- LEFT COLUMN: Past Entries -->
+        <div class="entries-list">
+
+            <!-- Entry 1: Happy Day -->
+            <div class="entry-card red">
+                <h3 class="card-title">😁 Happy Day</h3>
+                <div class="card-meta">
+                    <span>Oct 28, 2025</span>
+                    <span>&bull;</span> <!-- Bullet point separator -->
+                    <span class="tag-icon">🏷️</span>
+                    <span>life, gratitude</span>
+                </div>
+                <p class="card-excerpt">Today was wonderful — went for a long walk and finished my project...</p>
+            </div>
+
+
+
+        </div> <!-- End of Left Column -->
+
+        <!-- RIGHT COLUMN: New Entry Form -->
+        <div class="new-entry-container">
+
+            <!-- Form Header -->
+            <div class="form-header">
+                ✏️ New Entry
+            </div>
+
+            <!-- Form Inputs -->
+            <form class="form-body">
+
+                <!-- Title Input -->
+                <!-- We use a standard text input here for the title -->
+                <input type="text" class="input-field" placeholder="Title...">
+
+                <!-- Date and Mood Row -->
+                <!-- We group these two inputs in a flex container to sit side-by-side -->
+                <div class="row-group">
+                    <div class="input-field date-input">
+                        🗓️ Oct 28, 2025
+                    </div>
+                    <div class="input-field mood-input">
+                        Mood: 😁 😐 😔 😡
+                    </div>
+                </div>
+
+                <!-- Tags Input -->
+                <!-- We wrap the input to easily position the tag icon inside it -->
+                <div class="tag-input-container">
+                    <span class="tag-icon">🏷️</span>
+                    <input type="text" placeholder="tag1, tag2, ...">
+                </div>
+
+                <!-- Content Textarea -->
+                <!-- A textarea is used for multi-line text input -->
+                <textarea class="input-field" placeholder="Write your thoughts here..."></textarea>
+
+                <!-- Form Action Buttons -->
+                <!-- Buttons are grouped and aligned to the right -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-cancel">Cancel</button>
+                    <button type="submit" class="btn btn-save">💾 Save</button>
+                </div>
+
+            </form> <!-- End of Form Body -->
+
+        </div> <!-- End of Right Column -->
+
+    </div> <!-- End of Main Container -->
+
+</body>
+
+</html>
