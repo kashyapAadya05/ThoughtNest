@@ -48,7 +48,7 @@
 
                 <!-- Title Input -->
                 <!-- We use a standard text input here for the title -->
-                <input type="text" class="input-field" placeholder="Title...">
+                <input type="text" class="input-field" id="title" placeholder="Title...">
 
                 <!-- Date and Mood Row -->
                 <!-- We group these two inputs in a flex container to sit side-by-side -->
@@ -65,18 +65,18 @@
                 <!-- We wrap the input to easily position the tag icon inside it -->
                 <div class="tag-input-container">
                     <span class="tag-icon">🏷️</span>
-                    <input type="text" placeholder="tag1, tag2, ...">
+                    <input type="text" id="tags" placeholder="tag1, tag2, ...">
                 </div>
 
                 <!-- Content Textarea -->
                 <!-- A textarea is used for multi-line text input -->
-                <textarea class="input-field" placeholder="Write your thoughts here..."></textarea>
+                <textarea class="input-field" id="content" placeholder="Write your thoughts here..."></textarea>
 
                 <!-- Form Action Buttons -->
                 <!-- Buttons are grouped and aligned to the right -->
                 <div class="form-actions">
                     <button type="button" class="btn btn-cancel">Cancel</button>
-                    <button type="submit" class="btn btn-save">💾 Save</button>
+                    <button type="submit" id="save" class="btn btn-save">💾 Save</button>
                 </div>
 
             </form> <!-- End of Form Body -->
@@ -86,5 +86,6 @@
     </div> <!-- End of Main Container -->
 
 </body>
+<script src="app.js"></script>
 
 </html>
