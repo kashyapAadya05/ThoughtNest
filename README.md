@@ -76,16 +76,4 @@ ThoughtNest/
 ```
 
 
-## Contributing
-
-Contributions are welcome — open an issue or submit a PR with changes. Keep changes focused and minimal.
-
-
-## License
-
-This project is available under the MIT License. See the LICENSE file for details.
-
-
----
-
 Made with ❤️ — enjoy journaling.
