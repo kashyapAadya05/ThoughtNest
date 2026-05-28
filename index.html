@@ -5,34 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThoughtNest - Journal</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete" />
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+    <div id="app">
+    <nav>
+        <div>
+            ThoughtNest
+        </div>
+    </nav>
+
     <!-- 
       Main Container 
       This holds both the left column (entries) and the right column (form).
     -->
-    <div class="app-container">
+    <main class="app-container">
 
         <!-- LEFT COLUMN: Past Entries -->
-        <div class="entries-list">
-
-            <!-- Entry 1: Happy Day -->
-            <div class="entry-card red">
-                <h3 class="card-title">😁 Happy Day</h3>
-                <div class="card-meta">
-                    <span>Oct 28, 2025</span>
-                    <span>&bull;</span> <!-- Bullet point separator -->
-                    <span class="tag-icon">🏷️</span>
-                    <span>life, gratitude</span>
-                </div>
-                <p class="card-excerpt">Today was wonderful — went for a long walk and finished my project...</p>
-            </div>
-
-
-
+        <div class="entries-list hide-scrollbar">
+            <ul></ul>
         </div> <!-- End of Left Column -->
 
         <!-- RIGHT COLUMN: New Entry Form -->
@@ -54,10 +48,25 @@
                 <!-- We group these two inputs in a flex container to sit side-by-side -->
                 <div class="row-group">
                     <div class="input-field date-input">
-                        🗓️ Oct 28, 2025
+                        <input type="date" id="date" />
                     </div>
                     <div class="input-field mood-input">
-                        Mood: 😁 😐 😔 😡
+                        <select id="mood">
+                            <option value="" disabled selected>Mood...</option>
+                            <option value="happy">😁 Happy</option>
+                            <option value="sad">😢 Sad</option>
+                            <option value="angry">😡 Angry</option>
+                            <option value="calm">😌 Calm</option>
+                            <option value="anxious">😰 Anxious</option>
+                            <option value="excited">🤩 Excited</option>
+                            <option value="motivated">💪 Motivated</option>
+                            <option value="tired">😴 Tired</option>
+                            <option value="focused">🎯 Focused</option>
+                            <option value="lonely">😔 Lonely</option>
+                            <option value="grateful">🙏 Grateful</option>
+                            <option value="confused">🤔 Confused</option>
+                            <option value="other">📝 Other</option>
+                        </select>
                     </div>
                 </div>
 
@@ -75,7 +84,7 @@
                 <!-- Form Action Buttons -->
                 <!-- Buttons are grouped and aligned to the right -->
                 <div class="form-actions">
-                    <button type="button" class="btn btn-cancel">Cancel</button>
+                    <button type="button" id="cancel" class="btn btn-cancel">Cancel</button>
                     <button type="submit" id="save" class="btn btn-save">💾 Save</button>
                 </div>
 
@@ -83,7 +92,13 @@
 
         </div> <!-- End of Right Column -->
 
-    </div> <!-- End of Main Container -->
+    </main> <!-- End of Main Container -->
+
+    <footer>
+        <!-- random thoghts come here from JS -->
+        <div id="thought"></div> 
+    </footer>
+    </div>
 
 </body>
 <script src="app.js"></script>
