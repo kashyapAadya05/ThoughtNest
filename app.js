@@ -61,17 +61,18 @@ const colors = {
         "bgColor": "#F8BBD0",
         "textColor": "#880E4F",
         "borderColor": "#C2185B"
+    },
+    "other": {
+        "bgColor": "#FFFFFF",
+        "textColor": "#000000",
+        "borderColor": "#CCCCCC"
     }
 }
 
 
 // this function will return the color for the journals in the left side based on the mood of the journal, if the mood is not found in the colors object, it will return the default color (white background, black text and gray border)
 const colorForJournal = (mood) => {
-    return colors[mood.toLowerCase()] || {
-        "bgColor": "#FFFFFF",
-        "textColor": "#000000",
-        "borderColor": "#CCCCCC"
-    } 
+    return colors[mood.toLowerCase()]
 }
 
 
@@ -104,7 +105,6 @@ const thoughts = [
     "Mastery is hidden inside repetition.",
     "Protect your focus like an asset.",
     "Results come after boring consistency.",
-    "The best developers debug patiently.",
     "Deep work creates deep skill.",
     "You improve faster when you stop chasing shortcuts.",
     "Every expert was once embarrassingly bad.",
@@ -151,6 +151,7 @@ console.log(save)
 
 if (save) {
     save.addEventListener("click", (e) => {
+        e.preventDefault()
         saveJournal();
     })
 } else {
@@ -158,3 +159,46 @@ if (save) {
 }
 
 
+// Displaying the journals in the left side
+
+const journals = JSON.parse(localStorage.getItem("journals")) || [];
+
+const journalList = doc.getElementById("entries-list")
+
+journalList.innerHTML = journals.map(journal => {
+    const color = colorForJournal(journal.mood) || colors["other"]
+
+    return `
+<li 
+  class="journal-entry" 
+  style="
+    background-color: ${color.bgColor};
+    color: ${color.textColor};
+    border: 2px solid ${color.borderColor};
+  "
+>
+  <div class="journal-top">
+    <div>
+      <h3 class="journal-title">${journal.title}</h3>
+      <span class="journal-mood">${journal.mood}</span>
+    </div>
+  </div>
+
+  <p class="journal-content">
+    ${journal.content}
+  </p>
+
+  <div class="journal-footer">
+    <span class="journal-date">
+      📅 ${journal.date}
+    </span>
+
+    <div class="journal-tags">
+      ${journal.tags
+            .map((tag) => `<span class="tag">#${tag}</span>`)
+            .join("")}
+    </div>
+  </div>
+</li>
+`;
+})
