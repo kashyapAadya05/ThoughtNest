@@ -1,0 +1,266 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f0f12;
+    color: white;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+/* =========================
+   MAIN APP CONTAINER
+========================= */
+.app-container {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/* =========================
+   LEFT SIDE - JOURNAL LIST
+========================= */
+.entries-list {
+    flex: 2;
+    background: #16181d;
+    border: 1px solid #2d2f36;
+    border-radius: 22px;
+    padding: 25px;
+    min-height: 650px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   JOURNAL CARD
+========================= */
+.entry-card {
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 22px;
+    border: 2px solid;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.entry-card:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================
+   CARD TITLE
+========================= */
+.card-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* =========================
+   CARD META
+========================= */
+.card-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+.card-excerpt {
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* =========================
+   RIGHT SIDE - FORM
+========================= */
+.new-entry-container {
+    flex: 1;
+    background: #16181d;
+    border: 1px solid #2d2f36;
+    border-radius: 22px;
+    padding: 25px;
+    position: sticky;
+    top: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   FORM HEADER
+========================= */
+.form-header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   FORM BODY
+========================= */
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+.input-field,
+#tags {
+    width: 100%;
+    background: #23252d;
+    border: 2px solid #343741;
+    color: white;
+    border-radius: 14px;
+    padding: 16px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.input-field:focus,
+#tags:focus {
+    border-color: #7c5cff;
+    box-shadow: 0 0 8px rgba(124, 92, 255, 0.5);
+}
+
+/* =========================
+   ROW GROUP
+========================= */
+.row-group {
+    display: flex;
+    gap: 15px;
+}
+
+/* =========================
+   DATE + MOOD
+========================= */
+.date-input,
+.mood-input {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cfcfcf;
+    font-size: 14px;
+}
+
+/* =========================
+   TAG INPUT
+========================= */
+.tag-input-container {
+    position: relative;
+}
+
+.tag-input-container .tag-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#tags {
+    padding-left: 45px;
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+textarea {
+    resize: none;
+    min-height: 180px;
+    font-family: inherit;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn {
+    border: none;
+    padding: 14px 22px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+/* Cancel Button */
+.btn-cancel {
+    background: #2d2f36;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background: #444854;
+}
+
+/* Save Button */
+.btn-save {
+    background: linear-gradient(135deg, #00d2ff, #7c5cff);
+    color: white;
+}
+
+.btn-save:hover {
+    transform: scale(1.03);
+    opacity: 0.95;
+}
+
+/* =========================
+   FOOTER THOUGHT
+========================= */
+.footer-thought {
+    margin-top: 25px;
+    background: #1b1d25;
+    border-radius: 18px;
+    padding: 18px;
+    text-align: center;
+    color: #d6d6d6;
+    border: 1px solid #2f3340;
+    font-style: italic;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+
+    .app-container {
+        flex-direction: column;
+    }
+
+    .new-entry-container {
+        width: 100%;
+        position: static;
+    }
+
+    .entries-list {
+        width: 100%;
+    }
+
+    .row-group {
+        flex-direction: column;
+    }
+}
