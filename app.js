@@ -170,7 +170,7 @@ const renderJournals = () => {
 <li class="journal-entry" style="background-color: ${color.bg}; color: ${color.text}; border: 2px solid ${color.border};">
     <div class="journal-header">
         <h3 class="card-title">${journal.title}</h3>
-        <button class="btn-icon" data-id="${journal.id}" title="Delete">
+        <button class="btn-icon btn-delete" data-id="${journal.id}" title="Delete">
             <span class="material-symbols-outlined" style="pointer-events: none;">delete</span>
         </button>
     </div>
