@@ -1,79 +1,63 @@
 # ThoughtNest
 
-ThoughtNest is a minimal, beautiful client-side journal app built with plain HTML, CSS, and JavaScript. It stores entries in the browser's `localStorage`, supports tags and content, and shows a random uplifting thought in the footer.
+ThoughtNest is a client-side journal app built with plain HTML, CSS, and JavaScript. It saves data in browser local storage and runs with no build tools or dependencies.
 
----
+## What It Does
 
-**Live demo**: Open `index.html` in your browser (no build step required).
+- Create journal entries with title, date, mood, tags, and content.
+- Render saved entries in the left panel instantly after saving.
+- Color each entry card based on mood.
+- Show mood emojis in both the mood selector and rendered entries.
+- Delete entries using the delete icon on each card.
+- Display a random motivational thought in the footer.
+- Keep layout constrained to viewport height with internal panel scrolling.
 
+## Storage
 
-## Features
+- Data is stored in local storage under the key `journals`.
+- Each entry shape:
 
-- Clean, responsive single-page layout for creating journal entries
-- Title, tags and multi-line content fields
-- Saves entries to `localStorage` (persisted in your browser)
-- Random inspirational thought shown in the footer
-- Small, dependency-free codebase — easy to read and extend
-
-
-## Quick Start
-
-1. Clone the repo or download the folder.
-
-2. Open directly in your browser:
-
-```bash
-# From project root
-open index.html  # macOS
-xdg-open index.html  # Linux
-start index.html  # Windows
+```json
+{
+  "id": "string",
+  "title": "string",
+  "date": "yyyy-mm-dd",
+  "mood": "happy|sad|angry|calm|anxious|excited|motivated|tired|focused|lonely|grateful|confused|other",
+  "content": "string",
+  "tags": ["tag1", "tag2"]
+}
 ```
 
-3. Or serve over a simple HTTP server (recommended for some browsers):
+## Run Locally
+
+Open directly:
+
+```bash
+xdg-open index.html
+```
+
+Or serve via HTTP:
 
 ```bash
 python3 -m http.server 8000
-# then open http://localhost:8000 in your browser
 ```
 
+Then open `http://localhost:8000`.
 
-## Usage
+## Project Files
 
-- Type a title, date, mood, comma-separated tags, and your content.
-- Click the Save button to store the entry in `localStorage`.
-- Entries are currently saved as a simple array in `localStorage` under the `journals` key.
+- `index.html`: App structure and form.
+- `styles.css`: Dark theme, layout, card styles, responsive rules.
+- `app.js`: Entry save/render/delete logic, mood coloring, random thought.
 
+## Notes
 
-## Developer notes
+- Save uses form submit with `preventDefault()` in JS.
+- If you want a clean reset while testing, clear local storage for this site in browser DevTools.
 
-- Files of interest:
-  - `index.html` — markup and structure
-  - `styles.css` — styling and layout
-  - `app.js` — application logic (saving, UI hooks, random thought)
+## Future Improvements
 
-- The Save button in the default HTML is `type="submit"`. If you experience a page reload on save, either:
-  - Change the button to `type="button"`, or
-  - The JS already prevents the default submit behavior when clicking Save.
-
-- To debug entry saving:
-  - Open DevTools → Application → Local Storage and inspect the `journals` key.
-
-- Suggestions for improvements:
-  - Render saved journals in the left column and allow deletion/edit
-  - Add timestamps and mood selection stored with each entry
-  - Export / import entries (JSON)
-  - Replace `localStorage` with a small backend for sync across devices
-
-
-## File structure
-
-```
-ThoughtNest/
-├── index.html
-├── styles.css
-├── app.js
-└── README.md
-```
-
-
-Made with ❤️ — enjoy journaling.
+- Add edit-in-place for existing entries.
+- Add search/filter by mood or tags.
+- Add export/import JSON backup.
+- Add optional backend sync.

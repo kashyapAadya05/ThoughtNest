@@ -154,7 +154,7 @@ const renderJournals = () => {
     if (journals.length === 0) {
         journalList.innerHTML = `
             <div class="empty-state">
-                <div class="empty-state-badge">Start here</div>
+                <div class="empty-state-badge">A Mind Unfiltered</div>
                 <h2>No entries yet</h2>
                 <p>Write your first thought.</p>
             </div>
