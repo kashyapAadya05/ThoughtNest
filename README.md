@@ -32,8 +32,14 @@ ThoughtNest is a client-side journal app built with plain HTML, CSS, and JavaScr
 
 Open directly:
 
+Linux/MacOS:
 ```bash
 xdg-open index.html
+```
+
+Windows:
+```bash
+start index.html
 ```
 
 Or serve via HTTP:
