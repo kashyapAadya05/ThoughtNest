@@ -30,7 +30,7 @@ const colors = {
 
 // this function will return the color for the journals in the left side based on the mood of the journal, if the mood is not found in the colors object, it will return the default color (white background, black text and gray border)
 const colorForJournal = (mood = "other") => {
-    return colors[(mood || "other").toLowerCase()] || colors.other
+    return colors[mood.toLowerCase()]
 }
 
 
